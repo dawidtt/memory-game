@@ -28,11 +28,19 @@ function GameCard({ isShown, isSelected, pokemonId }) {
   });
 
   return (
-    <button>
+    <button disabled={isShown ? true : ""}>
       {loading && <p className="loading">Loading...</p>}
       {error && <p className="loading">{error}</p>}
-      {data && (
+      {isShown && data && (
         <img src={data.sprites.front_default} alt={data.species.name}></img>
+      )}
+      {isSelected && data ? (
+        <img src={data.sprites.front_default} alt={data.species.name}></img>
+      ) : (
+        <img
+          src="./src/assets/pokemon-logo-black-transparent.png"
+          alt="Pokemon logo"
+        ></img>
       )}
     </button>
   );

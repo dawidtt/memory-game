@@ -40,7 +40,7 @@ function Gameboard() {
   }
   return (
     <div className="gameboard">
-      <GameCard isShown={false} isSelected={true} pokemonId={1} />
+      <GameCard isShown={false} isSelected={false} pokemonId={1} />
     </div>
   );
 }
