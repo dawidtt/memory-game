@@ -1,4 +1,5 @@
 import { useState } from "react";
+import GameCard from "./GameCard";
 
 function Gameboard() {
   const [pokemons, setPokemons] = useState([
@@ -37,7 +38,11 @@ function Gameboard() {
         );
     }
   }
-  return <div className="gameboard"></div>;
+  return (
+    <div className="gameboard">
+      <GameCard isShown={false} isSelected={true} pokemonId={1} />
+    </div>
+  );
 }
 
 export default Gameboard;
