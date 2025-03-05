@@ -4,15 +4,3 @@ body {
   font-size: 18px;
   background-color: #feecff;
 }
-header {
-  background-color: #c110c4;
-  -webkit-box-shadow: 0px 12px 16px -16px rgba(66, 68, 90, 1);
-  -moz-box-shadow: 0px 12px 16px -16px rgba(66, 68, 90, 1);
-  box-shadow: 0px 12px 16px -16px rgba(66, 68, 90, 1);
-}
-header h1 {
-  margin: 0;
-  text-align: center;
-  padding: 24px 6px;
-  color: #fff;
-}
