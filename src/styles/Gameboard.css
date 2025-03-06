@@ -12,8 +12,6 @@
 
 @media (min-width: 620px) {
   .gameboard-grid {
-    display: grid;
     grid-template-columns: repeat(4, min(15vw, 150px));
-    gap: 15px;
   }
 }

@@ -1,15 +1,25 @@
 .gameboard button {
   aspect-ratio: 1/1;
   max-height: 220px;
-  background-color: #fff;
+  background-color: #82378c;
+  will-change: transform;
+  transition: transform 0.1s ease-in;
+  cursor: pointer;
+  border-radius: 4px;
+  border: none;
+  -webkit-box-shadow: 0px 12px 16px -16px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 0px 12px 16px -16px rgba(66, 68, 90, 1);
+  box-shadow: 0px 12px 16px -16px rgba(66, 68, 90, 1);
 }
 .gameboard button img {
   width: 120px;
 }
+.gameboard button:hover {
+  transform: scale(1.02);
+}
 
-@media (min-width: 768px) {
-  .gameboard button {
-    max-height: 220px;
-    background-color: #fff;
+@media (min-width: 620px) {
+  .gameboard button img {
+    width: min(12vw, 120px);
   }
 }
