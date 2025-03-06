@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./styles/GameCard.css";
 
 function GameCard({ isShown, isSelected, pokemonId }) {
   const [data, setData] = useState(null);

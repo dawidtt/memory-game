@@ -1,0 +1,15 @@
+.gameboard button {
+  aspect-ratio: 1/1;
+  max-height: 220px;
+  background-color: #fff;
+}
+.gameboard button img {
+  width: 120px;
+}
+
+@media (min-width: 768px) {
+  .gameboard button {
+    max-height: 220px;
+    background-color: #fff;
+  }
+}

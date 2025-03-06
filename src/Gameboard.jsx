@@ -1,9 +1,17 @@
 import { useState } from "react";
 import GameCard from "./GameCard";
+import "./styles/Gameboard.css";
 
 function Gameboard() {
   const [pokemons, setPokemons] = useState([
-    { id: 0, isShown: false, isSelected: false },
+    { id: 1, isShown: false, isSelected: false },
+    { id: 2, isShown: false, isSelected: false },
+    { id: 3, isShown: false, isSelected: false },
+    { id: 4, isShown: false, isSelected: false },
+    { id: 5, isShown: false, isSelected: false },
+    { id: 6, isShown: false, isSelected: false },
+    { id: 7, isShown: false, isSelected: false },
+    { id: 8, isShown: false, isSelected: false },
     { id: 1, isShown: false, isSelected: false },
     { id: 2, isShown: false, isSelected: false },
     { id: 3, isShown: false, isSelected: false },
@@ -40,7 +48,15 @@ function Gameboard() {
   }
   return (
     <div className="gameboard">
-      <GameCard isShown={false} isSelected={false} pokemonId={1} />
+      <div className="gameboard-grid">
+        {pokemons.map((pokemon) => (
+          <GameCard
+            isShown={pokemon.isShown}
+            isSelected={pokemon.isSelected}
+            pokemonId={pokemon.id}
+          />
+        ))}
+      </div>
     </div>
   );
 }
