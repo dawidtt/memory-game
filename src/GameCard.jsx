@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./styles/GameCard.css";
 
-function GameCard({ isShown, isSelected, pokemonId }) {
+function GameCard({ id, isShown, isSelected, fetchId, onSelect }) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -10,7 +10,7 @@ function GameCard({ isShown, isSelected, pokemonId }) {
     const fetchImg = async () => {
       try {
         const response = await fetch(
-          `https://pokeapi.co/api/v2/pokemon/${pokemonId}/`
+          `https://pokeapi.co/api/v2/pokemon/${fetchId}/`
         );
         if (!response.ok) {
           throw new Error(`HTTP error: Status ${response.status}`);
@@ -29,15 +29,24 @@ function GameCard({ isShown, isSelected, pokemonId }) {
   });
 
   return (
-    <button disabled={isShown ? true : ""}>
+    <button disabled={isShown ? true : ""} onClick={() => onSelect(id)}>
       {loading && <p className="loading">Loading...</p>}
       {error && <p className="loading">{error}</p>}
       {isShown && data && (
         <img src={data.sprites.front_default} alt={data.species.name}></img>
       )}
-      {isSelected && data ? (
+      {/* {isSelected && data && !isShown ? (
         <img src={data.sprites.front_default} alt={data.species.name}></img>
       ) : (
+        <img
+          src="./src/assets/pokemon-logo-black-transparent.png"
+          alt="Pokemon logo"
+        ></img>
+      )} */}
+      {isSelected && data && (
+        <img src={data.sprites.front_default} alt={data.species.name}></img>
+      )}
+      {!isSelected && data && !isShown && (
         <img
           src="./src/assets/pokemon-logo-black-transparent.png"
           alt="Pokemon logo"
