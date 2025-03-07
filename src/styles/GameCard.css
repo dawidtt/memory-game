@@ -12,6 +12,7 @@
 @keyframes turnCardBack {
   0% {
     transform: rotateY(180deg);
+    background-color: #fff;
   }
   50% {
   }
