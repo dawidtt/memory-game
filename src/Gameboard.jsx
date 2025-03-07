@@ -4,22 +4,118 @@ import "./styles/Gameboard.css";
 
 function Gameboard() {
   const [pokemons, setPokemons] = useState([
-    { fetchId: 1, id: crypto.randomUUID(), isShown: false, isSelected: false },
-    { fetchId: 2, id: crypto.randomUUID(), isShown: false, isSelected: false },
-    { fetchId: 3, id: crypto.randomUUID(), isShown: false, isSelected: false },
-    { fetchId: 4, id: crypto.randomUUID(), isShown: false, isSelected: false },
-    { fetchId: 5, id: crypto.randomUUID(), isShown: false, isSelected: false },
-    { fetchId: 6, id: crypto.randomUUID(), isShown: false, isSelected: false },
-    { fetchId: 7, id: crypto.randomUUID(), isShown: false, isSelected: false },
-    { fetchId: 8, id: crypto.randomUUID(), isShown: false, isSelected: false },
-    { fetchId: 1, id: crypto.randomUUID(), isShown: false, isSelected: false },
-    { fetchId: 2, id: crypto.randomUUID(), isShown: false, isSelected: false },
-    { fetchId: 3, id: crypto.randomUUID(), isShown: false, isSelected: false },
-    { fetchId: 4, id: crypto.randomUUID(), isShown: false, isSelected: false },
-    { fetchId: 5, id: crypto.randomUUID(), isShown: false, isSelected: false },
-    { fetchId: 6, id: crypto.randomUUID(), isShown: false, isSelected: false },
-    { fetchId: 7, id: crypto.randomUUID(), isShown: false, isSelected: false },
-    { fetchId: 8, id: crypto.randomUUID(), isShown: false, isSelected: false },
+    {
+      fetchId: 1,
+      id: crypto.randomUUID(),
+      isShown: false,
+      isSelected: false,
+      wasSelected: false,
+    },
+    {
+      fetchId: 2,
+      id: crypto.randomUUID(),
+      isShown: false,
+      isSelected: false,
+      wasSelected: false,
+    },
+    {
+      fetchId: 3,
+      id: crypto.randomUUID(),
+      isShown: false,
+      isSelected: false,
+      wasSelected: false,
+    },
+    {
+      fetchId: 4,
+      id: crypto.randomUUID(),
+      isShown: false,
+      isSelected: false,
+      wasSelected: false,
+    },
+    {
+      fetchId: 5,
+      id: crypto.randomUUID(),
+      isShown: false,
+      isSelected: false,
+      wasSelected: false,
+    },
+    {
+      fetchId: 6,
+      id: crypto.randomUUID(),
+      isShown: false,
+      isSelected: false,
+      wasSelected: false,
+    },
+    {
+      fetchId: 7,
+      id: crypto.randomUUID(),
+      isShown: false,
+      isSelected: false,
+      wasSelected: false,
+    },
+    {
+      fetchId: 8,
+      id: crypto.randomUUID(),
+      isShown: false,
+      isSelected: false,
+      wasSelected: false,
+    },
+    {
+      fetchId: 1,
+      id: crypto.randomUUID(),
+      isShown: false,
+      isSelected: false,
+      wasSelected: false,
+    },
+    {
+      fetchId: 2,
+      id: crypto.randomUUID(),
+      isShown: false,
+      isSelected: false,
+      wasSelected: false,
+    },
+    {
+      fetchId: 3,
+      id: crypto.randomUUID(),
+      isShown: false,
+      isSelected: false,
+      wasSelected: false,
+    },
+    {
+      fetchId: 4,
+      id: crypto.randomUUID(),
+      isShown: false,
+      isSelected: false,
+      wasSelected: false,
+    },
+    {
+      fetchId: 5,
+      id: crypto.randomUUID(),
+      isShown: false,
+      isSelected: false,
+      wasSelected: false,
+    },
+    {
+      fetchId: 6,
+      id: crypto.randomUUID(),
+      isShown: false,
+      isSelected: false,
+      wasSelected: false,
+    },
+    {
+      fetchId: 7,
+      id: crypto.randomUUID(),
+      isShown: false,
+      isSelected: false,
+      wasSelected: false,
+    },
+    {
+      fetchId: 8,
+      id: crypto.randomUUID(),
+      isShown: false,
+      isSelected: false,
+      wasSelected: false,
+    },
   ]);
 
   const selectedPokemons = pokemons.filter(
@@ -44,7 +140,7 @@ function Gameboard() {
         )
       );
     else {
-      setTimeout(clearSelected, 1000);
+      setTimeout(clearSelected, 1400);
     }
   }
 
@@ -52,7 +148,9 @@ function Gameboard() {
     if (selected < 3) {
       setPokemons(
         pokemons.map((pokemon) =>
-          pokemon.id === id ? { ...pokemon, isSelected: true } : pokemon
+          pokemon.id === id
+            ? { ...pokemon, isSelected: true, wasSelected: true }
+            : pokemon
         )
       );
     }
@@ -68,6 +166,7 @@ function Gameboard() {
             isSelected={pokemon.isSelected}
             fetchId={pokemon.fetchId}
             onSelect={onSelect}
+            wasSelected={pokemon.wasSelected}
           />
         ))}
       </div>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./styles/GameCard.css";
 
-function GameCard({ id, isShown, isSelected, fetchId, onSelect }) {
+function GameCard({ id, isShown, isSelected, fetchId, onSelect, wasSelected }) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -29,7 +29,19 @@ function GameCard({ id, isShown, isSelected, fetchId, onSelect }) {
   });
 
   return (
-    <button disabled={isShown ? true : ""} onClick={() => onSelect(id)}>
+    <button
+      className={
+        isSelected
+          ? "selected"
+          : isShown
+          ? "shown"
+          : wasSelected
+          ? "was-selected"
+          : ""
+      }
+      disabled={isShown ? true : ""}
+      onClick={() => onSelect(id)}
+    >
       {loading && <p className="loading">Loading...</p>}
       {error && <p className="loading">{error}</p>}
       {isShown && data && (
