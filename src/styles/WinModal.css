@@ -1,0 +1,36 @@
+.win-modal-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0000002f;
+}
+.win-modal {
+  background-color: #fff;
+  padding: 36px 40px;
+  border-radius: 8px;
+}
+.win-modal h2 {
+  margin-top: 4px;
+}
+.win-modal button {
+  width: 100%;
+  padding: 18px 24px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background-color: #c110c4;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  margin-top: 20px;
+  transition: transform 0.1s ease-in;
+}
+.win-modal button:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+}

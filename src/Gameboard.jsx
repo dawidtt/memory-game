@@ -2,7 +2,7 @@ import { useState } from "react";
 import GameCard from "./GameCard";
 import "./styles/Gameboard.css";
 
-function Gameboard() {
+function Gameboard({ gameOver }) {
   const [pokemons, setPokemons] = useState([
     {
       fetchId: 1,
@@ -117,6 +117,13 @@ function Gameboard() {
       wasSelected: false,
     },
   ]);
+
+  if (
+    pokemons.filter((pokemon) => pokemon.isShown === true).length ===
+    pokemons.length
+  )
+    setTimeout(gameOver, 1000);
+  gameOver;
 
   const selectedPokemons = pokemons.filter(
     (pokemon) => pokemon.isSelected === true
