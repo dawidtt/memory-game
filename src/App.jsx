@@ -43,7 +43,10 @@ function App() {
   }
 
   const [pokemons, setPokemons] = useState(generatePokemons());
-
+  function playAgain() {
+    setIsGameOver(false);
+    setPokemons(generatePokemons());
+  }
   return (
     <>
       <header>
@@ -54,7 +57,7 @@ function App() {
         pokemons={pokemons}
         setPokemons={setPokemons}
       />
-      {isGameOver && <WinModal />}
+      {isGameOver && <WinModal playAgain={playAgain} />}
     </>
   );
 }
