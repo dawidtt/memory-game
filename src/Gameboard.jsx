@@ -44,8 +44,13 @@ function Gameboard({ gameOver, pokemons, setPokemons, score, setScore }) {
             : pokemon
         )
       );
+
+      pokemons.map((pokemon) =>
+        pokemon.id === id && pokemon.isSelected === false
+          ? setScore(score + 1)
+          : ""
+      );
     }
-    setScore(score + 1);
   }
   return (
     <div className="gameboard">
