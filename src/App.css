@@ -10,3 +10,7 @@ header h1 {
   padding: 24px 6px;
   color: #fff;
 }
+.score,
+.best-score {
+  text-align: center;
+}

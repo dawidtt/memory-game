@@ -1,7 +1,7 @@
 import GameCard from "./GameCard";
 import "./styles/Gameboard.css";
 
-function Gameboard({ gameOver, pokemons, setPokemons }) {
+function Gameboard({ gameOver, pokemons, setPokemons, score, setScore }) {
   if (
     pokemons.filter((pokemon) => pokemon.isShown === true).length ===
     pokemons.length
@@ -45,6 +45,7 @@ function Gameboard({ gameOver, pokemons, setPokemons }) {
         )
       );
     }
+    setScore(score + 1);
   }
   return (
     <div className="gameboard">

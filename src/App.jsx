@@ -46,7 +46,12 @@ function App() {
   function playAgain() {
     setIsGameOver(false);
     setPokemons(generatePokemons());
+    setScore(0);
+    if (score > bestScore) setBestScore(score);
   }
+  const [score, setScore] = useState(0);
+  const [bestScore, setBestScore] = useState(0);
+
   return (
     <>
       <header>
@@ -56,8 +61,15 @@ function App() {
         gameOver={gameOver}
         pokemons={pokemons}
         setPokemons={setPokemons}
+        score={score}
+        setScore={setScore}
       />
-      {isGameOver && <WinModal playAgain={playAgain} />}
+      <p className="score">Score: {score}</p>
+      <p className="best-score">Best score: {bestScore}</p>
+
+      {isGameOver && (
+        <WinModal playAgain={playAgain} score={score} bestScore={bestScore} />
+      )}
     </>
   );
 }
