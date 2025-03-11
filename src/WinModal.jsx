@@ -4,7 +4,7 @@ function WinModal({ playAgain, score, bestScore }) {
     <div className="win-modal-wrapper">
       <div className="win-modal">
         <h2>You have won the game</h2>
-        <p>Your score was: {score}</p>
+        <p>Your score is: {score}</p>
         <p>
           {score > bestScore
             ? "It's your best score so far. Good job!!!"
