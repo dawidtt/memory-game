@@ -59,7 +59,10 @@
   animation-name: turnCardBack;
   animation-duration: 0.8s;
   animation-direction: 1;
-  animation-fill-mode: forwards;
+  transform: rotateY(0deg);
+}
+.gameboard button.was-selected:hover {
+  transform: rotateY(0deg) scale(1.02);
 }
 @media (min-width: 620px) {
   .gameboard button img {
